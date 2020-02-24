@@ -3,7 +3,6 @@ class CreateSongs < ActiveRecord::Migration[6.0]
     create_table :songs do |t|
       t.string :name
       t.belongs_to :artist, null: false, foreign_key: true
-
       t.timestamps
     end
   end
