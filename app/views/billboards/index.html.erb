@@ -1,0 +1,5 @@
+<h1>Billboards#index</h1>
+<% @billboards.each do |billboard| %>
+  <p><%= billboard.name %></p>
+  <%= link_to 'Show', billboard %>
+<% end %>

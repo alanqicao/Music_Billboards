@@ -7,11 +7,11 @@
 #   Character.create(name: 'Luke', song: songs.first)
 5.times do |i|
 
-  dir = Artist.create(name: "artist-#{i}")
-  theater = Theater.create(name: "theater-#{i}")
-  song = dir.songs.create(name: "song-#{i}")
+  artist = Artist.create(name: "artist-#{i}")
+  billboard = Billboard.create(name: "billboard-#{i}")
+  song = artist.songs.create(name: "song-#{i}")
 
 end
 
-songs = Song.all.where(theater_id: nil)
-puts "songs with no theater #{songs.size}"
+songs = Song.all.where(billboard_id: nil)
+puts "songs with no billboard #{songs.size}"
