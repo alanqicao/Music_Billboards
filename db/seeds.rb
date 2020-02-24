@@ -3,5 +3,15 @@
 #
 # Examples:
 #
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+#   songs = song.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
+#   Character.create(name: 'Luke', song: songs.first)
+5.times do |i|
+
+  dir = Artist.create(name: "artist-#{i}")
+  theater = Theater.create(name: "theater-#{i}")
+  song = dir.songs.create(name: "song-#{i}")
+
+end
+
+songs = Song.all.where(theater_id: nil)
+puts "songs with no theater #{songs.size}"
